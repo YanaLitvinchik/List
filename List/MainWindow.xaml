@@ -1,0 +1,77 @@
+﻿<Window x:Class="List.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:List"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="620" Width="800">
+    <Window.Resources>
+        <XmlDataProvider x:Key="depProvider" Source="Data/dep.xml" XPath="root"/>
+        <XmlDataProvider x:Key="empProvider" Source="Data/emp.xml" XPath="root"/>
+    </Window.Resources>
+    <DockPanel>
+        <StackPanel x:Name="header" Orientation="Horizontal"
+                    HorizontalAlignment="Center" DockPanel.Dock="Top">
+            <Image Source="Image/ap.png" Width="250" Margin="10"/>
+            <TextBlock FontFamily="Trebuchet MS" FontSize="28"
+                       Text="System of control"
+                       Padding="0 50 0 0"/>
+        </StackPanel>
+        <StackPanel x:Name="left" DockPanel.Dock="Left">
+            <GroupBox Header="Choose workers" Margin="10 0"
+                      Width="300" FontSize="17" FontFamily="Trebuchet MS">
+                <StackPanel>
+                <Label Content="List of departames" Margin="0 0 0 10"/>
+                    <ComboBox x:Name="deplist" DisplayMemberPath="@name" 
+                              SelectedIndex="0" Foreground="Aqua"
+                              ItemsSource="{Binding Source={StaticResource depProvider}, 
+                                            XPath= department}" SelectionChanged="deplist_SelectionChanged"/>
+                    <Label Content="List of departames"                            
+                           Margin="0 0 0 10"
+                           />
+                    <ListBox x:Name="emplist" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <Label Content="{Binding  XPath =@LastName}"/>
+                                    <Label Content=" "/>
+                                    <Label Content="{Binding XPath =@MiddleName}"/>
+                                    <Label Content=" "/>
+                                    <Label Content="{Binding XPath =@firstName}"/>
+                                    <Label Content=" "/>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel x:Name="right">
+            <GroupBox Header="Show individual information" Margin="0 0 50 0"
+                      Height ="300">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding XPath =@photo }" Width="200"
+                           Grid.Column="0" Grid.Row="0"/>
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+                        <Label Content="LastName" Margin="0 0 0 5" />
+                        <TextBox x:Name="deplistt"/>
+                        <Label Content="List of dept" Margin="0 5 0 0 "/>
+                        <TextBox x:Name="firstName"></TextBox>
+                        <Label Content="Second name" Margin="0 5 0 0 "/>
+                        <TextBox x:Name="MiddleName"/>
+                        <Label Content="Birthday" Margin="0 5 0 0 "/>
+                        <TextBox x:Name="Bibi"></TextBox>
+                        <Label Content="Position" Margin="0 5 0 0 "/>
+                        <TextBox x:Name="pos"></TextBox>
+
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+    </DockPanel>
+</Window>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <employee LastName ="Zulu" firstName="papa" MiddleName="victor" Bibi="12.12.1212" Position="b" photo ="Image/1.jpg"/>
+  <employee LastName ="alpha" firstName="lima" MiddleName="victor" Bibi="12.12.1212" Position="m" photo ="Image/2.jpg"/>
+  <employee LastName ="victor" firstName="alpha" MiddleName="victor" Bibi="12.12.1212" Position="m" photo ="Image/3.jpg"/>
+  <employee LastName ="lima" firstName="victor" MiddleName="victor" Bibi="12.12.1212" Position="k" photo ="Image/4.jpg"/>
+  <employee LastName ="papa" firstName="Zulu" MiddleName="victor" Bibi="12.12.1212" Position="a" photo ="Image/5.jpg"/>
+</root>

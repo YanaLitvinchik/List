@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <department id="1" name ="Бухгалтерия"/>
+  <department id="2" name ="Маркетинг"/>
+  <department id="3" name ="Компьютерный"/>
+  <department id="4" name ="Транспортный"/>
+  <department id="5" name ="Юридический"/>
+</root>
