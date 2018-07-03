@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:List"
         mc:Ignorable="d"
-        Title="MainWindow" Height="620" Width="800">
+        Title="MainWindow" Height="520" Width="800">
     <Window.Resources>
         <XmlDataProvider x:Key="depProvider" Source="Data/dep.xml" XPath="root"/>
         <XmlDataProvider x:Key="empProvider" Source="Data/emp.xml" XPath="root"/>
@@ -13,7 +13,7 @@
     <DockPanel>
         <StackPanel x:Name="header" Orientation="Horizontal"
                     HorizontalAlignment="Center" DockPanel.Dock="Top">
-            <Image Source="Image/ap.png" Width="250" Margin="10"/>
+            <Image Source="Image/ap.png" Width="100" Margin="10"/>
             <TextBlock FontFamily="Trebuchet MS" FontSize="28"
                        Text="System of control"
                        Padding="0 50 0 0"/>
@@ -55,8 +55,8 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="{Binding XPath =@photo }" Width="200"<!---->
-                           Grid.Column="0" Grid.Row="0"/>
+                    <Image x:Name="photo" Source="Image/1.png" Width="200" 
+                           Grid.Row="0" Grid.Column="0"/>
                     <StackPanel Grid.Row="0" Grid.Column="1">
                         <Label Content="LastName" Margin="0 0 0 5" />
                         <TextBox x:Name="deplistt"/>
